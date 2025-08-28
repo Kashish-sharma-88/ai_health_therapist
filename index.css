@@ -1,0 +1,9 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+
+.main_div{
+    height: 300px;
+    width: 100%;
+}
