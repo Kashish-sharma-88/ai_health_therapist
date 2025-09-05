@@ -1,0 +1,16 @@
+# Gradle/Android
+.gradle/
+build/
+**/build/
+
+# Node / React
+node_modules/
+dist/
+.env
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.iml
+*.class
