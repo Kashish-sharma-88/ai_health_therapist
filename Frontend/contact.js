@@ -3,7 +3,7 @@ function debugLog(...args) {
   console.log("[CONTACT]", ...args);
 }
 
-// Grab form
+
 const contactForm = document.getElementById("contactForm");
 debugLog("Form found:", !!contactForm);
 
@@ -31,7 +31,7 @@ contactForm?.addEventListener("submit", (e) => {
 
   // --- Simulate Sending ---
   debugLog("Message ready to send:", { name, email, message });
-  alert("✅ Message sent successfully! We'll get back to you soon.");
+  alert("✅ Message sent successfully!");
 
   // Reset form
   contactForm.reset();

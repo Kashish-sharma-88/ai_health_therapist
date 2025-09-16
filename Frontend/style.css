@@ -14,6 +14,7 @@ body {
   flex-direction: column;
 }
 
+
 /* Navbar */
 nav {
   display: flex;
@@ -57,7 +58,8 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 6rem 2rem;
+  min-height: 100vh;
 }
 
 .hero-content {
@@ -117,7 +119,7 @@ nav {
 .about-container {
   max-width: 1100px;
   width: 100%;
-  background: transparent; /* container itself is transparent to show gradient */
+  background: transparent;
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
@@ -145,7 +147,7 @@ nav {
 
 /* About Cards */
 .about-card {
-  background: linear-gradient(135deg, #6e8efb, #a777e3); /* vibrant gradient */
+  background: linear-gradient(135deg, #6e8efb, #a777e3); 
   color: #fff;
   padding: 1.5rem;
   border-radius: 12px;
@@ -155,7 +157,7 @@ nav {
 }
 
 .about-card h3 {
-  color: #ffd700; /* golden heading */
+  color: #ffd700; 
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
 }
@@ -184,7 +186,7 @@ nav {
   }
 
   .about-grid {
-    grid-template-columns: 1fr; /* stack cards on mobile */
+    grid-template-columns: 1fr; /* cards on mobile */
   }
 
   .about-card {
@@ -316,7 +318,7 @@ nav {
 
 @media (max-width: 768px) {
   .contact-container {
-    flex-direction: column;   /* stack on small screens */
+    flex-direction: column;   
     width: 95%;
   }
 
