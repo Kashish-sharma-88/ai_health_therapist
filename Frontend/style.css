@@ -425,15 +425,15 @@ nav {
 }
 /* Footer Styles */
 .footer {
-  position: fixed;       /* chipka hua */
+  position: fixed;      
   left: 0;
   bottom: 0;
-  width: 100%;           /* full width */
-  background-color: #378f8f; /* footer ka color */
-  color: #fff;           /* text color */
+  width: 100%;          
+  background-color: #378f8f; 
+  color: #fff;          
   text-align: center;
   padding: 20px 10px;
-  z-index: 1000;         /* upar rahe */
+  z-index: 1000;         
   font-family: Arial, sans-serif;
 }
 
