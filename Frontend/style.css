@@ -7,13 +7,12 @@
 }
 
 body {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff;
+  background:#dcfdfd;
+  color: #000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
 
 /* Navbar */
 nav {
@@ -21,7 +20,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background: rgba(0, 0, 0, 0.2);
+  background: #378f8f;
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -48,7 +47,7 @@ nav {
 }
 
 .nav-links li a:hover {
-  color: #ffd700;
+  color: #04507c;
 }
 
 /* Hero Section */
@@ -81,36 +80,36 @@ nav {
   padding: 12px 25px;
   border-radius: 30px;
   background: transparent;
-  color: #fff;
+  color: #0e0e0e;
   text-decoration: none;
   font-weight: bold;
   margin: 10px;
-  border: 2px solid #ffd700;
+  border: 2px solid #268181;
   display: inline-block;
   transition: transform 0.3s, background 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.1);
-  background: #ffb300;
-   color: #000;
+  background: #378f8f;
+   color: #fbf9f9;
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #ffd700;
-  color: #fff;
+  border: 2px solid #256c6c;
+  color: #0e0e0e;
 }
 
 .btn-outline:hover {
-  background: #ffd700;
-  color: #000;
+  background: #378f8f;
+  color: #fcfbfb;
 }
 
 /* ===== About Us Section ===== */
 .about-us {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: #9ee3e3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,7 +128,7 @@ nav {
 .about-container h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: #0a0a0a;
 }
 
 .about-intro {
@@ -205,14 +204,14 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  background: #7ab7b7;
 }
 
 .contact-container {
   display: flex;
   width: 800px;
   max-width: 95%;
-  background: #fff;
+  background: #0f0f0f;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   overflow: hidden;
@@ -260,7 +259,7 @@ nav {
 .contact-form button {
   padding: 12px;
   margin-top: 15px;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  background: #268181;
   border: none;
   border-radius: 10px;
   color: white;
@@ -273,6 +272,7 @@ nav {
 .contact-form button:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(110,142,251,0.4);
+  background: #378f8f;
 }
 
 /* Right-side contact info */
