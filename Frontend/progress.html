@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Tracker | AI Therapist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">AI Therapist</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="progress-section">
+    <div class="progress-container">
+      <h2>📈 Your Progress Tracker</h2>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill">0%</div>
+      </div>
+      <p id="progressMessage" class="progress-message">Let’s get started 🚀</p>
+
+      <!-- Milestones -->
+      <div class="milestones">
+        <label><input type="checkbox" value="journal"> Daily Journaling</label>
+        <label><input type="checkbox" value="exercise"> 15 min Exercise</label>
+        <label><input type="checkbox" value="meditation"> Meditation / Breathing</label>
+        <label><input type="checkbox" value="sleep"> 8 Hours Sleep</label>
+      </div>
+    </div>
+  </section>
+
+  <script src="progress.js"></script>
+</body>
+</html>

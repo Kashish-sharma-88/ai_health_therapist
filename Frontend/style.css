@@ -134,7 +134,7 @@ nav {
 .about-intro {
   font-size: 1rem;
   margin-bottom: 2rem;
-  color: #e0e0ff;
+  color: #000;
 }
 
 /* Grid Layout for Cards */
@@ -146,7 +146,7 @@ nav {
 
 /* About Cards */
 .about-card {
-  background: linear-gradient(135deg, #6e8efb, #a777e3); 
+  background: #378f8f; 
   color: #fff;
   padding: 1.5rem;
   border-radius: 12px;
@@ -193,8 +193,6 @@ nav {
     padding: 1.2rem;
   }
 }
-
-
 
 /* Contact Page Styling */
 
@@ -347,4 +345,82 @@ nav {
   }
 }
 
+/* ===== Progress Tracker Styling ===== */
+.progress-section {
+  padding: 50px 20px;
+  background: #f8fdfd;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.progress-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.progress-container h2 {
+  margin-bottom: 1rem;
+  color: #268181;
+}
+
+.progress-bar {
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 30px;
+  margin: 20px 0;
+}
+
+.progress-fill {
+  background: #ff4d4d; /* default red */
+  color: white;
+  height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+.progress-message {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.milestones label {
+  background: #f2fafa;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.milestones label:hover {
+  background: #e6f7f7;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 

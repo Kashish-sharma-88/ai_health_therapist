@@ -1,0 +1,120 @@
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #dcfdfd; 
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #378f8f;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #04507c;
+}
+
+/* ===== Features Section ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100vw;        /* full viewport width */
+  max-width: 100%;     /* prevent container limit */
+  margin: 0;           
+  padding: 2rem 4rem; 
+  margin-bottom: 1rem;
+  min-height: 100vh;
+  align-items: start;
+  justify-items: start;
+  text-align: left;
+  background: #9ee3e3; 
+  box-sizing: border-box;
+}
+
+
+/* ===== Feature Cards Styling ===== */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #378f8f;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.feature-card h3 {
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+  margin-top: 1 rem;
+  font-size: 1.5rem;
+}
+
+.feature-card p {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr; /* stack all cards vertically */
+    padding: 2rem 1rem;
+  }
+
+  .feature-card {
+    text-align: center;
+    align-items: center;
+    padding: 1.2rem;
+  }
+}
