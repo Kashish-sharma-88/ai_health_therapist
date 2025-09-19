@@ -423,4 +423,111 @@ nav {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* Footer Styles */
+.footer {
+  position: fixed;       /* chipka hua */
+  left: 0;
+  bottom: 0;
+  width: 100%;           /* full width */
+  background-color: #378f8f; /* footer ka color */
+  color: #fff;           /* text color */
+  text-align: center;
+  padding: 20px 10px;
+  z-index: 1000;         /* upar rahe */
+  font-family: Arial, sans-serif;
+}
+
+
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.brand{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.logo{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background: linear-gradient(135deg,#0ea5a8,#7c3aed);
+  box-shadow:0 4px 18px rgba(2,6,23,0.6);
+}
+.logo svg{
+  width:28px;
+  height:28px;
+}
+.brand h3{
+  margin:0;
+  font-size:1rem;
+  letter-spacing:0.2px;
+}
+.brand p{
+  margin:0;
+  color:#04090f;
+  font-size:0.875rem;
+}
+.links{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.links a{
+  color:#020811;
+  text-decoration:none;
+  font-size:1.2rem;
+}
+.links a:hover{
+  color:white;
+  text-decoration:underline;
+}
+.social{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.social a{
+  width:40px;
+  height:40px;
+  display:inline-grid;
+  place-items:center;
+  background:#f8f8f8;
+  border-radius:8px;
+  border:1px solid rgba(11, 3, 3, 0.06);
+}
+.social a svg{
+  width:18px;
+  height:18px;
+  opacity:0.95;
+}
+.bottom{
+  margin-top:18px;
+  border-top:1px solid rgba(255,255,255,0.04);
+  padding-top:14px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.copyright{
+  color:#010204;
+  font-size:1.2rem;
+}
+
+@media (max-width:640px){
+  .container{ padding:0 6px; }
+  .brand p{ display:none; }
+  .links{ order:3; width:100%; justify-content:center; }
+  .bottom{ flex-direction:column; align-items:center; gap:8px; }
+}
 
