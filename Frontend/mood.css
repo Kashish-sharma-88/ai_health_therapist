@@ -1,0 +1,153 @@
+/* ===== Mood Tracker Section ===== */
+.mood-tracker {
+  padding: 4rem 1rem;
+  background: #9ee3e3; 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mood-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.mood-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #222;
+  font-size: 1.8rem;
+}
+
+.mood-container h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* ===== Mood Questions Row Layout ===== */
+.mood-question {
+  display: flex;              
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 20px;                 
+  margin: 1.5rem 0;
+  padding-left: 2.5rem;
+}
+
+.mood-question label {
+  width: 250px;               
+  font-weight: bold;
+  color: #444;
+  text-align: left;
+}
+
+.mood-question select,
+.mood-question input {
+  flex: 1;                  
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.mood-question select:focus,
+.mood-question input:focus {
+  border-color: #268181;
+  box-shadow: 0 0 5px rgba(38,129,129,0.5);
+}
+
+/* ===== Button ===== */
+.mood-container button {
+  margin: 1rem auto 0 auto;
+  display: block;
+  padding: 12px 20px;
+  background: #268181;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mood-container button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== Results & History ===== */
+.mood-result {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+#moodHistory {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#moodHistory li {
+  background: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ===== Chart Styling ===== */
+#moodChart {
+  margin-top: 1.5rem;
+  max-height: 300px;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .mood-container {
+    padding: 1.5rem;
+  }
+
+  .mood-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .mood-question {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;  
+  }
+
+  .mood-question label {
+    width: 100%;
+  }
+
+  .mood-question select,
+  .mood-question input {
+    max-width: 100%;
+  }
+
+  .mood-container button {
+    width: 100%;
+  }
+}

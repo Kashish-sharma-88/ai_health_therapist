@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Tracker | AI Therapist</title>
+   <link rel="stylesheet" href="features.css">
+  <link rel="stylesheet" href="mood.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">AI Therapist</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="mood-tracker">
+  <div class="mood-container">
+    <h2>📝 Daily Mood Check-In</h2>
+    <form id="moodForm">
+      <div class="mood-question">
+        <label for="moodFeeling">1. How are you feeling today?</label>
+        <select id="moodFeeling" required>
+          <option value="">--Select--</option>
+          <option value="5">😊 Happy</option>
+          <option value="2">😔 Sad</option>
+          <option value="3">😰 Anxious</option>
+          <option value="1">😡 Angry</option>
+          <option value="3">😐 Neutral</option>
+        </select>
+      </div>
+
+      <div class="mood-question">
+        <label for="moodEnergy">2. How much energy do you have?</label>
+        <select id="moodEnergy" required>
+          <option value="">--Select--</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+
+      <div class="mood-question">
+        <label for="moodSleep">3. Did you sleep well last night?</label>
+        <select id="moodSleep" required>
+          <option value="">--Select--</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div class="mood-question">
+        <label for="moodStress">4. Stress level (1-5):</label>
+        <input type="number" id="moodStress" min="1" max="5" required>
+      </div>
+
+      <button type="submit">Check Mood</button>
+    </form>
+
+    <div id="moodResult" class="mood-result"></div>
+
+    <h3>📅 Your Mood History</h3>
+    <ul id="moodHistory"></ul>
+
+    <h3>📊 Mood & Stress Trend</h3>
+    <canvas id="moodChart"></canvas>
+  </div>
+</section>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="mood.js"></script>
+</body>
+</html>
+
+
