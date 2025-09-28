@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/auth.js";
+import chatRoutes from "./routes/chat.js";
 
 dotenv.config();
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors());
+app.use("/api/chat", chatRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
