@@ -50,6 +50,75 @@ nav {
   color: #04507c;
 }
 
+/* Hamburger Menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001; /* above nav links */
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff; /* white bars */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle:hover span {
+  background: #ffd700; 
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;         
+    width: 250px;
+    height: 70vh;          
+    background-color: #268181; 
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 100px;
+    padding-left: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -3px 0 15px rgba(0,0,0,0.3); 
+  }
+
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;           
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 12px 0;      
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .nav-links li a:hover {
+    background-color: #378f8f; 
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+
+
 /* Hero Section */
 .hero {
   flex: 1;
@@ -425,7 +494,7 @@ nav {
 }
 /* Footer Styles */
 .footer {
-  position: fixed;      
+  position: relative;      
   left: 0;
   bottom: 0;
   width: 100%;          
@@ -436,8 +505,6 @@ nav {
   z-index: 1000;         
   font-family: Arial, sans-serif;
 }
-
-
 
 .container{
   max-width:1100px;
@@ -529,5 +596,29 @@ nav {
   .brand p{ display:none; }
   .links{ order:3; width:100%; justify-content:center; }
   .bottom{ flex-direction:column; align-items:center; gap:8px; }
+}
+
+/* Floating Chat Button */
+#chat-button {
+  position: fixed;
+  bottom: 20px;      /* distance from bottom */
+  right: 20px;       /* distance from right */
+  background: #378f8f;
+  color: white;
+  font-size: 22px;
+  border-radius: 50%;
+  padding: 15px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+#chat-button:hover {
+  background: #378f8f;
+  transform: scale(1.1);
 }
 
