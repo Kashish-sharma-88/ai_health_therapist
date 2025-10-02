@@ -6,7 +6,7 @@ async function sendMessage() {
   if (!msg) return;
 
   // Show user message
-  chatBox.innerHTML += `<div class="user"><b>You:</b> ${msg}</div>`;
+  chatBox.innerHTML += `<div class="msg user"><b>You:</b> ${msg}</div>`;
   input.value = "";
 
   try {
@@ -19,22 +19,22 @@ async function sendMessage() {
     const data = await res.json();
 
     if (res.ok && data.reply) {
-      chatBox.innerHTML += `<div class="bot"><b>Bot:</b> ${data.reply}</div>`;
+      chatBox.innerHTML += `<div class="msg bot"><b>Bot:</b> ${data.reply}</div>`;
     } else {
-      chatBox.innerHTML += `<div class="bot" style="color:red;"><b>Error:</b> ${
+      chatBox.innerHTML += `<div class="msg bot" style="color:red;"><b>Error:</b> ${
         data.error || "No response from AI"
       }</div>`;
     }
 
-    // Auto scroll to bottom
+    // Auto scroll
     chatBox.scrollTop = chatBox.scrollHeight;
   } catch (err) {
     console.error("Frontend Chat Error:", err);
-    chatBox.innerHTML += `<div class="bot" style="color:red;"><b>Error:</b> Something went wrong!</div>`;
+    chatBox.innerHTML += `<div class="msg bot" style="color:red;"><b>Error:</b> Something went wrong!</div>`;
   }
 }
 
-// ✅ Press Enter to send message
+// ✅ Press Enter to send
 input.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     sendMessage();

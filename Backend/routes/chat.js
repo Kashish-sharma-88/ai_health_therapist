@@ -1,12 +1,20 @@
 import express from "express";
 import Chat from "../models/Chat.js";
+import fetch from "node-fetch";
+import dotenv from "dotenv";
 
+dotenv.config();
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   const { message } = req.body;
 
   try {
+    if (!process.env.OPENROUTER_API_KEY) {
+      console.error("❌ API key missing in .env");
+      return res.status(500).json({ reply: "Server config error: API key missing" });
+    }
+
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -14,12 +22,9 @@ router.post("/", async (req, res) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini",  // ✅ recommended model
+        model: "gpt-4o-mini", // ✅ recommended free model
         messages: [
-          {
-            role: "system",
-            content: "You are an AI Therapist chatbot for students. Always answer directly in 2-3 empathetic, supportive sentences. Never say you do not understand, never list options, and never refuse. If the student says 'hi', greet them warmly and ask about their feelings or day."
-          },
+          { role: "system", content: "You are a friendly AI Therapist chatbot for students. Reply in 2-3 short empathetic sentences." },
           { role: "user", content: message }
         ]
       })
@@ -28,10 +33,11 @@ router.post("/", async (req, res) => {
     const data = await response.json();
     console.log("🔹 OpenRouter Response:", JSON.stringify(data, null, 2));
 
-    const reply =
-      data?.choices?.[0]?.message?.content ||
-      data?.error?.message ||
-      "⚠️ AI did not return a proper reply.";
+    if (data.error) {
+      return res.status(500).json({ reply: `API Error: ${data.error.message}` });
+    }
+
+    const reply = data?.choices?.[0]?.message?.content || "⚠️ No reply from AI";
 
     await Chat.create({ role: "user", message });
     await Chat.create({ role: "bot", message: reply });
