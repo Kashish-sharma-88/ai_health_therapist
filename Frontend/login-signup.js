@@ -13,7 +13,7 @@ document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
 
   debugLog("Attempting login for:", email);
   try {
-    const res = await fetch("http://localhost:5000/api/auth/login", {
+    const res = await fetch("https://ai-health-therapist-bf0u.onrender.com/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -56,7 +56,7 @@ document.getElementById("signupForm")?.addEventListener("submit", async (e) => {
 
   debugLog("Attempting signup:", { name, email });
   try {
-    const res = await fetch("http://localhost:5000/api/auth/register", {
+    const res = await fetch("https://ai-health-therapist-bf0u.onrender.com/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),
