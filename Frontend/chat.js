@@ -5,7 +5,6 @@ async function sendMessage() {
   const msg = input.value.trim();
   if (!msg) return;
 
-  // Show user message
   chatBox.innerHTML += `<div class="msg user"><b>You:</b> ${msg}</div>`;
   input.value = "";
 
@@ -16,27 +15,23 @@ async function sendMessage() {
       body: JSON.stringify({ message: msg })
     });
 
-    const data = await res.json();
-
-    if (res.ok && data.reply) {
-      chatBox.innerHTML += `<div class="msg bot"><b>Bot:</b> ${data.reply}</div>`;
-    } else {
-      chatBox.innerHTML += `<div class="msg bot" style="color:red;"><b>Error:</b> ${
-        data.error || "No response from AI"
-      }</div>`;
+    if (!res.ok) {
+      chatBox.innerHTML += `<div class="msg bot" style="color:red;"><b>Error:</b> ${res.statusText}</div>`;
+      return;
     }
 
-    // Auto scroll
+    const data = await res.json();
+    const reply = data.reply || "⚠️ No reply from AI";
+
+    chatBox.innerHTML += `<div class="msg bot"><b>Bot:</b> ${reply}</div>`;
     chatBox.scrollTop = chatBox.scrollHeight;
+
   } catch (err) {
     console.error("Frontend Chat Error:", err);
     chatBox.innerHTML += `<div class="msg bot" style="color:red;"><b>Error:</b> Something went wrong!</div>`;
   }
 }
 
-// ✅ Press Enter to send
 input.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    sendMessage();
-  }
+  if (e.key === "Enter") sendMessage();
 });
