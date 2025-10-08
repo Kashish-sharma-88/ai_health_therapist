@@ -673,7 +673,39 @@ nav {
 .exercise-display video {
   margin-top: 15px;
   border-radius: 10px;
-  width: 100%;
+  width: 80%;
+}
+
+/* 🎵 Audio Player Controls (Arrows beside playbar) */
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.music-btn {
+  background: #268181;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 1 rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.music-btn:hover {
+  background: #378f8f;
+  transform: scale(1.1);
+}
+
+#song-title {
+  color: #04507c;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 1.1rem;
 }
 
 /* Responsive Adjustments */
@@ -686,4 +718,9 @@ nav {
   .exercise-btn {
     width: 80%;
   }
+
+  .exercise-display audio {
+    width: 100%;
+  }
 }
+
